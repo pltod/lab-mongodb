@@ -18,7 +18,13 @@ lab-mongodb
 
 
 
+#### 02_start-sharded-cluster.js
 
+> works but require some paths to be changed inside the script
+
+> created processes must be killed manually after that
+
+> ```ps -Aef | grep mongo``` could be used to see process numbers
 
 
 * see comments in each file for more info
