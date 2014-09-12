@@ -1,0 +1,20 @@
+{
+  "name": "mdb",
+  "version": "0.0.1",
+  "description": "mongo utilities",
+  "bin": {
+    "mdb": "mdb.js"
+  },
+  "dependencies": {
+    "mongodb": "^1.4.x",
+    "mongojs": "*",
+    "JSONStream": "*"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "author": {
+    "name": "pltod"
+  },
+  "license": "MIT"
+}

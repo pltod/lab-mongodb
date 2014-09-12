@@ -27,4 +27,15 @@ lab-mongodb
 > ```ps -Aef | grep mongo``` could be used to see process numbers
 
 
-* see comments in each file for more info
+#### 03-mdb
+
+* The idea of this module is to make more convenient different db operations. For example to start mongodb, reinit collections with fresh data, show collection content, show running mongodb processes etc. If the module is published mdb command will be available in shell which means all operations will be started with ```mdb 'operation'``` without the need to remeber the coresponding mongodb commands.
+
+* Module is working extensively with hardcoded paths. More work is needed to make all paths configurable.
+
+* See 03-mdb/README for usage or run ```mdb.js``` to print available operations.
+
+
+## More Info
+
+See comments in each file for more info
