@@ -1,14 +1,10 @@
 {
-  "name": "mdb",
+  "name": "async-testing",
   "version": "0.0.1",
   "description": "mongo utilities",
-  "bin": {
-    "mdb": "mdb.js"
-  },
   "dependencies": {
     "mongodb": "*",
-    "mongojs": "*",
-    "JSONStream": "*"
+    "thunky": "*"
   },
   "keywords": [
     "mongodb"

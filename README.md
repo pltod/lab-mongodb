@@ -58,6 +58,13 @@ lab-mongodb
 * Additional operations like data re-initialization could be added to the process.
 
 
+#### 05-thunky
+
+* Connect to mongodb with thunkifying the connect function. Make the code looks a little bit more synchronous.
+
+! Note that this script requires node version 0.11.x
+
+
 ## More Info
 
 See comments in each file for more info

@@ -1,16 +1,18 @@
-//Starts mongodb sharded cluster with 3 config servers, 4 shards with RF = 3, and 4 mongos
-//The code is kind of synchronous because it creates folders in sync manner as well as starts each process after the previous has been started
-//Currently there is no clean way to stop the processes - use kill
+// Starts mongodb sharded cluster with 3 config servers, 4 shards with RF = 3, and 4 mongos
+
+// The code is kind of synchronous because it creates folders in sync manner as well as starts each process after the previous has been started
+
+// Currently there is no clean way to stop the processes - use kill
 
 var fs = require('fs');
 var path = require('path');
 var log = require('util').log;
 var exec = require('child_process').exec;
 
-var rootDir = path.join('/Users', 'pltod', 'DevEnv', 'data', 'shardedCluster');
+// TODO This must be external parameter
+var rootDir = 'PATH_TO_THE_DIRECTORY_WHERE_SHARDED_CLUSTER_WILL_BE_STARTED';
 
 var processes = ['mongod', 'mongos'];
-
 
 var configIds = [{id: 'cfg0', port: 26050}, {id: 'cfg1', port: 26051}, {id: 'cfg2', port: 26052}];
 
@@ -49,7 +51,8 @@ function getLocation(currentDir) {
 
 function constructConfigServerStringForMongos() {
   var str = '';
-  var serverName = 'pltod.local'
+  // TODO This must be external parameter
+  var serverName = 'SERVER_NAME_WHERE_THE_CLUSTER_IS_STARTED'
   var portDelimiter = ':';
   var serverDelimiter = ','
   configIds.forEach(function (sm, index) {
