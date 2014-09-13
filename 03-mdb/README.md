@@ -1,22 +1,12 @@
 # Usage
 
-If this module is published with npm link the commands bellow are applicable:
+* To be able to use 'mdb' command in the terminal the module must be locally published with npm link.
 
-* mdb
+* Alternative way of invocation is - for example to see all available commands run - ```mdb.js```
 
-> show help
-
-* mdb start
-
-> start mongo
-
-* mdb show
-
-> show running mongo processes
-
-* mdb reinit path_to_node_modules_with_array_of_json_documents
-
-> reinit data inside default database
+* In reinit use case data inside collection folder will be inserted into the db. This could be configured to work with data from specified path.
 
 
-It can be runned as shell script as well but invocation locations must be respected.
+# Note
+
+There are some hardcoded locations inside the script. Make sure all is adapted to particular environment.

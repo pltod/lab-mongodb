@@ -1,0 +1,25 @@
+{
+  "name": "async-testing",
+  "version": "0.0.1",
+  "description": "mongo utilities",
+  "bin": {
+    "mdb": "main.js"
+  },
+  "dependencies": {
+    "mongodb": "^1.4.x",
+    "async": "*"
+  },
+  "devDependencies": {
+    "tape": "*"
+  },
+  "scripts": {
+    "start": "node main.js"
+  },
+  "keywords": [
+    "mongodb"
+  ],
+  "author": {
+    "name": "pltod"
+  },
+  "license": "MIT"
+}
