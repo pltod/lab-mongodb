@@ -20,6 +20,7 @@ lab-mongodb
 
 #### 02-start-sharded-cluster.js
 
+
 > works but require some paths to be changed inside the script
 
 > created processes must be killed manually after that
@@ -29,6 +30,8 @@ lab-mongodb
 ! Note that this script requires node version 0.11.x because it is using Promise function.
 
 #### 03-mdb
+
+NOTE: This is on idea level only. Contains hardcoded paths and there is no error management (it could leaves unclosed db connections if there is error during execution). In ideal case with well configured paths it is working.
 
 * The idea of this module is to invoke db operations in node way. 
 

@@ -25,8 +25,9 @@ var defaultDataDir = 'data';
 var dbpath = path.join(userHomeDir, defaultDataDir);
 var mongoCommand = commandPrefix + dbpath;
 
-//var initDataPath = process.argv[3];
-var initDataPath = 'data';
+// Denotes the directory with collection data
+var dataPath = process.argv[3];
+var defaultDataPath = 'collections';
 
 
 (process.argv[2] === 'start') && start();
@@ -77,7 +78,7 @@ function help() {
   console.log('mdb.js - help');
   console.log('mdb.js start - start the DB');
   console.log('mdb.js show - show running DB processes');
-  console.log('mdb.js reinit - reinit the DB data, drop all collections and recreates them with fresh data');
+  console.log('mdb.js reinit "derectory with collections" - reinit the DB data, drop all collections and recreates them with fresh data');
   console.log('mdb.js "collection name" - show collection data');      
   
 }
@@ -140,9 +141,14 @@ function insertData(obj) {
 function processing() {
   var path = require('path');
   var fs = require('fs');
-
-  //TODO collections folder must not be hardcoded
-  var dir = path.join(__dirname, "collections");
+  var dir;
+  
+  if (dataPath) {
+    dir = path.normalize(dataPath);
+  } else {
+    dir = path.normalize(defaultDataPath);
+  }
+  
   var list = fs.readdirSync(dir);
 
   return new Promise(function (resolve, reject) {
