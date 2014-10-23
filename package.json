@@ -1,10 +1,8 @@
 {
-  "name": "async-testing",
+  "name": "lab-mongodb",
   "version": "0.0.1",
-  "description": "mongo utilities",
+  "description": "mongodb starter kit",
   "dependencies": {
-    "mongodb": "*",
-    "thunky": "*"
   },
   "keywords": [
     "mongodb"

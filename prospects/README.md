@@ -1,0 +1,1 @@
+* This folder contains scripts that needs major refactoring but could be useful at some point in time

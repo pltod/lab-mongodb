@@ -1,3 +1,5 @@
+//WARNING: Works but needs major refactoring
+
 // Starts mongodb sharded cluster with 3 config servers, 4 shards with RF = 3, and 4 mongos
 
 // The code is kind of synchronous because it creates folders in sync manner as well as starts each process after the previous has been started
