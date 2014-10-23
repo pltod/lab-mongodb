@@ -36,7 +36,7 @@
 
 > all of the db folder, db name, collection name have default values
 
-* have an easy entry point of start writing queries against the data
+* have an easy entry point to start writing queries against the db
 
 
 # How To Use The Tools
