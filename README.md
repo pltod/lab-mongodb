@@ -6,7 +6,7 @@
 - [Desired Workflow](#desired-workflow)
 - [How To Use The Tools](#how-to-use-the-tools)
   - [mdb command line utility](#mdb-command-line-utility)
-  - [dev utilities](#dev-utilities)
+  - [mongodb and control flow](#mongodb-and-control-flow)
   - [mongodb and servers](#mongodb-and-servers)
 - [Compatibility](#compatibility)
 - [Licence](#licence)
