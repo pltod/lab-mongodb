@@ -35,7 +35,12 @@ function isStarted() {
 }
 
 function initCollection(mustDrop) {
-  initSingle('data.json', config.defaultDatabase, (args.name || config.defaultCollection), mustDrop);
+  if (!fs.existsSync(config.defaultDataSingleFile)) {
+    log('Please create json file with data named "' + config.defaultDataSingleFile + '" in ' + process.cwd());
+    return;
+  }
+  
+  initSingle(config.defaultDataSingleFile, config.defaultDatabase, (args.name || config.defaultCollection), mustDrop);
 }
 
 function initDb(mustDrop) {
@@ -51,7 +56,7 @@ function validLocation(loc) {
 }
 
 function startInDefault() {
-  var loc = config.defaultLocation;
+  var loc = config.defaultMongoLocation;
   if (!validLocation(loc)) {
     fs.mkdirSync(loc);
   } 
@@ -99,9 +104,15 @@ function initSingle(file, dbName, collectionName, mustDrop, callback) {
 }
 
 function initMultiple(dbName, mustDrop) {
-  var dir = 'data';
-  var list = fs.readdirSync(dir);
+  var list;
+  try {
+    list = fs.readdirSync(config.defaultDataLocation);
+    (list.length === 0) ? log('WARNING: There are no files in your data folder') : log('Files found, processing...');    
+  } catch(ex) {
+    log('Please create folder named "' + config.defaultDataLocation + '" in ' + process.cwd() + ' and put some json files in it.')
+    return;
+  }
   async.eachSeries(list, function (file, callback) {
-    initSingle(path.join(dir, file), dbName, path.basename(file, '.json'), mustDrop, callback)
+    initSingle(path.join(config.defaultDataLocation, file), dbName, path.basename(file, '.json'), mustDrop, callback)
   });
 }

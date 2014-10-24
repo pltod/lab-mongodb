@@ -1,7 +1,9 @@
 {
   "server": "localhost", 
   "port": "27017", 
-  "defaultLocation": "dbdata",
+  "defaultMongoLocation": "dbdata",
+  "defaultDataLocation": "data",
+  "defaultDataSingleFile": "data.json",  
   "defaultDatabase": "dbtemp",
   "defaultCollection": "colltemp"
 }
