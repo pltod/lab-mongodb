@@ -10,6 +10,7 @@
     "tape": "^3.0.1"
   },
   "scripts": {
+    "start": "node --harmony index.js",
     "test": "node --harmony test.js | colortape"
   },
   "keywords": [

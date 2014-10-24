@@ -56,9 +56,13 @@ In mdb folder
 * see mdb help for tool phylosophy and all commands
 
 
-## dev utilities
+## mongodb and control flow
 
-In utils folder
+In test folder.
+
+Demonstrates connect-insert-close flow with callbacks, promises, and generators.
+
+How to start it:
 
 * dependencies with ```npm i```
 
@@ -66,13 +70,9 @@ In utils folder
 
 * run test suite with ```npm test```
 
-See the test suite for example usage. Three control flow approaches are covered:
+> The actual test suite code where the three approaches are used is in test.js.
 
-> classic callback approach
-
-> promises
-
-> generators
+* to use the db put some db queries in index.js and run it with ```npm start```
 
 
 **NOTES:**
@@ -83,7 +83,13 @@ See the test suite for example usage. Three control flow approaches are covered:
 
 ## mongodb and servers
 
-See server folder for preconfigured express, koa, and hapi servers.
+See server folder for preconfigured express, koa, and hapi servers with native mongodb nodejs driver. There are huge list of abstractions but one must be careful how to choose particular considering tree main aspects:
+
+* app server used
+
+* control-flow approach
+
+* application needs
 
 
 # Compatibility
