@@ -48,7 +48,7 @@ function initDb(mustDrop) {
 }
 
 function help() {
-  console.log(fs.readFileSync('usage.txt', 'utf8'));
+  console.log(fs.readFileSync(path.join(__dirname, 'usage.txt'), 'utf8'));
 }
 
 function validLocation(loc) {
