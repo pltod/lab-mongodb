@@ -72,7 +72,7 @@ function startDb(loc) {
 }
 
 function initSingle(file, dbName, collectionName, mustDrop, callback) {
-  debug ('Importing file: ' + file);
+  debug ('About to import file ' + file + ' into ' + dbName);
   var importParams = [
     '--host', config.server, 
     '--port', config.port,
@@ -85,7 +85,6 @@ function initSingle(file, dbName, collectionName, mustDrop, callback) {
   if (mustDrop) {
     importParams.push('--drop')
   }
-  
   var pr = spawn('mongoimport', importParams);
   pr.stdout.on('data', function (data) {
     log(data.toString());
@@ -113,6 +112,6 @@ function initMultiple(dbName, mustDrop) {
     return;
   }
   async.eachSeries(list, function (file, callback) {
-    initSingle(path.join(config.defaultDataLocation, file), dbName, path.basename(file, '.json'), mustDrop, callback)
+    (path.extname(file) === '.json') && initSingle(path.join(config.defaultDataLocation, file), dbName, path.basename(file, '.json'), mustDrop, callback)
   });
 }
