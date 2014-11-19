@@ -1,14 +1,21 @@
 {
-  "name": "lab-mongodb",
+  "name": "mdb",
   "version": "0.0.1",
-  "description": "mongodb starter kit",
+  "description": "mongodb utility for db initialisation/reinitialisation",
+  "bin": {
+    "mdb": "mdb.js"
+  },
   "dependencies": {
+    "async": "^0.9.0",
+    "debug": "^2.1.0",
+    "minimist": "^1.1.0",
+    "mongodb": "^2.0.3"
   },
   "keywords": [
     "mongodb"
   ],
   "author": {
-    "name": "pltod"
+    "name": "Plamen Todorov"
   },
   "license": "MIT"
 }
